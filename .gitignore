@@ -1,0 +1,8 @@
+# Ignore junk files
+.DS_Store
+
+# Ignore node modules
+node_modules
+
+# Ignore Harp generated static files
+dist/
