@@ -21,7 +21,7 @@ gulp.task('serve', function () {
     /**
      * Watch for scss changes, tell BrowserSync to refresh main.css
      */
-    gulp.watch("_src/**/*.sass", function () {
+    gulp.watch("_src/**/*.styl", function () {
       reload("main.css", {stream: true});
     });
     /**
