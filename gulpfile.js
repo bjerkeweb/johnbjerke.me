@@ -7,7 +7,7 @@ var harp        = require('harp');
  * Serve the Harp Site from the src directory
  */
 gulp.task('serve', function () {
-  harp.server(__dirname, {
+  harp.server(__dirname + '/_src', {
     port: 9000
   }, function () {
     browserSync({
@@ -21,7 +21,7 @@ gulp.task('serve', function () {
     /**
      * Watch for scss changes, tell BrowserSync to refresh main.css
      */
-    gulp.watch("*.sass", function () {
+    gulp.watch("_src/**/*.sass", function () {
       reload("main.css", {stream: true});
     });
     /**
