@@ -1,0 +1,77 @@
+// /*------------------------------------*\
+//     $GRID
+// \*------------------------------------*/
+
+media-query($mq)
+  if ($mq = 'mobile')
+    {block}
+  
+  if ($mq is 'mobile-and-down')
+    +narrowerthan($bp-small-start)
+      {block}
+  
+  if ($mq is 'laptop')
+    +between($bp-small-start, $bp-tablet-end)
+      {block}
+    
+  if ($mq is 'laptop-and-up')
+    +widerthan($bp-tablet-start)
+      {block}
+  
+  if($mq is 'desktop')
+    +widerthan($bp-desk-start)
+      {block}
+    
+grid-calc($i, $name)
+  .col-{$name}-{$i}
+    width (($i / $grid-total-columns) * 100) %
+
+grid-setup($namespace)
+  for $i in (1..$grid-total-columns)
+    grid-calc($i, $namespace)
+
+grid-setup("mobile")
+
++narrowerthan($bp-small-start)
+  grid-setup("mobile-and-down")
+  
++between($bp-small-start, $bp-tablet-end)
+  grid-setup("laptop")
+
++widerthan($bp-tablet-start)
+  grid-setup("laptop-and-up")
+
++widerthan($bp-desk-start)
+  grid-setup("desktop")
+
+
+.row
+  clearfix()
+  position relative
+  margin-left: -($grid-gutter-width)
+  margin-right: -($grid-gutter-width)
+
+
+.container
+  clearfix()
+  position: relative
+  margin-left: auto
+  margin-right: auto
+  max-width $grid-max-width
+  padding-left: $grid-gutter-width
+  padding-right: $grid-gutter-width
+
+[class^=col-],
+.col
+  position: relative
+  float: left
+  min-height: 1px
+  padding-left: $grid-gutter-width
+  padding-right: $grid-gutter-width
+
+[class^=col-].col-centered,
+.col.col-centered,
+.col-centered
+  float: none
+  margin-left: auto
+  margin-right: auto
