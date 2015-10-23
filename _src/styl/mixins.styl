@@ -1,0 +1,48 @@
+// clearfix
+clearfix()
+  &:after
+    content: "";
+    display: table;
+    clear: both;
+
+.clearfix()
+  &:after
+    content: "";
+    display: table;
+    clear: both;
+
+// convert px to rem 
+remify(value)
+  u = unit(value)
+
+  if (u is 'px')
+    return unit(value/$base-fontsize, 'rem')
+  else
+    return unit(value, u)
+
+// vertical center
+vert-center()
+  position relative
+  top 50%
+  transform translateY(-50%)
+    
+// reset list styles
+list-reset()
+  list-style: none
+  padding: 0
+  margin: 0
+
+// media queries
+widerthan(var)
+  condition = 'screen and (min-width: %s)' % var
+  @media condition
+    {block}
+
+narrowerthan(var)
+  condition = 'screen and (max-width: %s)' % var
+  @media condition
+    {block}
+
+between(minWidth, maxWidth)
+  @media screen and (min-width: minWidth) and (max-width: maxWidth)
+    {block}
