@@ -1,0 +1,32 @@
+.cases
+  margin-top 3em
+  @extend .row
+  
+  ul
+    list-reset()
+  
+  li
+    @extend .col
+    @extend .col-mobile-12
+    @extend .col-laptop-and-up-4
+    opacity 0
+    transform translateY(-10px)
+    animation fadein 0.6s 0.5s 1 forwards ease-in-out
+    
+    &:nth-child(1)
+      animation-delay 0.5s
+    
+    &:nth-child(2)
+      animation-delay 0.6s
+    
+    &:nth-child(3)
+      animation-delay 0.7s
+    
+    &:nth-child(4)
+      animation-delay 0.8s
+    
+    &:nth-child(5)
+      animation-delay 0.9s
+    
+    &:nth-child(6)
+      animation-delay 1.0s
