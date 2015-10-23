@@ -1,0 +1,72 @@
+$base-color = #C6538C
+$base-font-family = "Akkurat light", "DIN", "avenir", "verdana", sans-serif
+$animation-duration = 0.2s
+
+// Reset the box-sizing
+*
+  background-repeat: no-repeat
+  box-sizing border-box
+  &:before,
+  &:after
+    box-sizing border-box
+  transition all 0.2s ease-out
+
+img
+  vertical-align: middle
+  max-width: 100%
+  height: auto
+  border: 0
+
+body
+  font-family: $base-font-family
+  font-size: 1em
+  background: darken(#F2F4F6, 15%)
+  // background: linear-gradient(to right, rgba(49,156,119,1) 0%, rgba(4,106,55,1) 100%)
+  color: #878F9F
+  height: 100%
+  margin: 0
+  line-height: 1.4
+  padding: 1em
+  -webkit-font-smoothing antialiased
+  text-rendering optimizeLegibility
+
+.wrap
+  background-color white
+  padding 3em
+  min-height calc(100vh - 2em)
+  
+  +widerthan($bp-desk-wide-start)
+    padding 3em
+
+.contain
+  max-width 1170px
+  margin-left auto
+  margin-right auto
+
+h1
+  margin: 0
+  display: block
+  opacity 0
+  transform translateY(-10px)
+  animation fadein 0.6s 0.5s 1 forwards ease-in-out
+  font-weight 100
+  
+  strong
+    color darken(#878F9F, 50%)
+
+.intro
+  opacity 0
+  transform translateY(-10px)
+  animation fadein 0.6s 0.5s 1 forwards ease-in-out
+
+h3
+  font-weight: 300
+  font-size: 1em
+  line-height: 1
+  display: block
+
+button
+  display inline-block
+  background none
+  border none
+  outline none
