@@ -20,7 +20,8 @@ $(function() {
   // Hide overlay on esc press
   $(document).keydown(function(e) {
     if(e.keyCode == 27 && $overlay.hasClass('is-open')) {
-      $overlay.removeClass('is-open')
+      $overlay.removeClass('is-open');
+      $body.removeClass('noscroll')
     }
   });
 
