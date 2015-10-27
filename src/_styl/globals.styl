@@ -1,5 +1,5 @@
 $base-color = #C6538C
-$base-font-family = 'karla', "Akkurat", "DIN", "avenir", "verdana", sans-serif
+$base-font-family = "Akkurat", "DIN", "avenir", "verdana", sans-serif
 $animation-duration = 0.2s
 
 // Reset the box-sizing
@@ -41,6 +41,9 @@ body
   padding: 1em
   -webkit-font-smoothing antialiased
   text-rendering optimizeLegibility
+  
+  &.noscroll
+    overflow hidden
 
 .wrap
   background-color #F8F7F7
@@ -100,8 +103,10 @@ h3
   display: block
 
 h4
-  font-family 'publico'
+  font-family 'quarto'
   font-weight 700
+  font-size 1.6em
+  margin-top 0
 
 button
   display inline-block
