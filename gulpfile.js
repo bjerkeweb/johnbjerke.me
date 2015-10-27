@@ -7,7 +7,7 @@ var harp        = require('harp');
  * Serve the Harp Site from the src directory
  */
 gulp.task('serve', function () {
-  harp.server(__dirname + '/_src', {
+  harp.server(__dirname + '/src', {
     port: 9000
   }, function () {
     browserSync({
@@ -21,13 +21,13 @@ gulp.task('serve', function () {
     /**
      * Watch for scss changes, tell BrowserSync to refresh main.css
      */
-    gulp.watch("_src/**/*.styl", function () {
+    gulp.watch("src/**/*.styl", function () {
       reload("main.css", {stream: true});
     });
     /**
      * Watch for all other changes, reload the whole page
      */
-    gulp.watch(["_src/**/*.jade"], function () {
+    gulp.watch(["src/**/*.jade"], function () {
       reload();
     });
   })
