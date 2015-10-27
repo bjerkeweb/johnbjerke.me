@@ -4,8 +4,8 @@
   height 100%
   top 0
   left 0
-  padding 3em
-  background-color $overlay-bg-color
+  padding 1em
+  background-color darken($overlay-bg-color, 15%)
   color white
   visibility hidden
   opacity 0
@@ -20,21 +20,31 @@
     color lighten($overlay-bg-color, 50%)
     text-decoration none
     transition color 0.15s ease-in-out
+    border-bottom none
     
     &:hover
       color lighten($overlay-bg-color, 30%)
+
+.overlay-wrap
+  position relative
+  padding 3em
 
 .trigger-overlay
   position absolute
   top 0
   right 0
+  font-size 19px
 
 .overlay-close
   position absolute
-  top 3em
-  right 3em
+  top 1.8em
+  right 1.2em
   z-index 200
   font-size 20px
+  
+  +widerthan($bp-desk-start)
+    top 3.5em
+    right 3em
 
 .about-info
   vert-center()

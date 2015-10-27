@@ -1,5 +1,5 @@
 $base-color = #C6538C
-$base-font-family = "Akkurat light", "DIN", "avenir", "verdana", sans-serif
+$base-font-family = 'karla', "Akkurat", "DIN", "avenir", "verdana", sans-serif
 $animation-duration = 0.2s
 
 // Reset the box-sizing
@@ -17,12 +17,24 @@ img
   height: auto
   border: 0
 
+a
+  color darken(#B5E51D, 10%)
+  text-decoration none
+  border-bottom 1px solid darken(#B5E51D, 0%)
+  transition color 0.2s ease-in-out, border 0.2s ease-in-out
+  
+  &:hover
+    color darken(#B5E51D, 35%)
+    border-bottom 1px solid darken(#B5E51D, 25%)
+  
+
 body
   font-family: $base-font-family
-  font-size: 1em
-  background: darken(#F2F4F6, 15%)
+  font-size: 18px
+  // background: darken(#F2F4F6, 5%)
+  background #4B434D
   // background: linear-gradient(to right, rgba(49,156,119,1) 0%, rgba(4,106,55,1) 100%)
-  color: #878F9F
+  color: darken(#878F9F, 25%)
   height: 100%
   margin: 0
   line-height: 1.4
@@ -31,11 +43,11 @@ body
   text-rendering optimizeLegibility
 
 .wrap
-  background-color white
-  padding 3em
+  background-color #F8F7F7
+  padding 1em
   min-height calc(100vh - 2em)
   
-  +widerthan($bp-desk-wide-start)
+  +widerthan($bp-desk-start)
     padding 3em
 
 .contain
@@ -44,26 +56,52 @@ body
   margin-right auto
 
 h1
+  font-family 'quarto'
   margin: 0
   display: block
   opacity 0
   transform translateY(-10px)
   animation fadein 0.6s 0.5s 1 forwards ease-in-out
-  font-weight 100
+  font-weight 800
+  line-height 1.2
+  font-size 2em
+  text-align center
+  color #4B434D
+  margin-bottom 40px
+  
+  +widerthan($bp-tablet-start)
+    font-size 3em
+
+  +widerthan($bp-desk-start)
+    font-size 4.5em
   
   strong
-    color darken(#878F9F, 50%)
+    font-weight normal
+    color #4B434D
 
+    
 .intro
   opacity 0
   transform translateY(-10px)
   animation fadein 0.6s 0.5s 1 forwards ease-in-out
+  font-size 20px
+  text-align center
+  
+  +widerthan($bp-tablet-start)
+    margin-bottom 2em
+  
+  +widerthan($bp-desk-start)
+    margin-bottom 6em
 
 h3
   font-weight: 300
   font-size: 1em
   line-height: 1
   display: block
+
+h4
+  font-family 'publico'
+  font-weight 700
 
 button
   display inline-block
