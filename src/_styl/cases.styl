@@ -3,17 +3,30 @@
   @extend .row
   
 .work-item
-  @extend .col
-  @extend .col-mobile-12
-  @extend .col-laptop-and-up-6
-  margin 0 auto 30px auto
+  float left
+  width calc(100% - 20px)
+  margin 0 10px 20px
   opacity 0
   transform translateY(-10px)
   animation fadein 0.6s 0.5s 1 forwards ease-in-out
+  overflow hidden
+  display inline-block
   position relative
+  
+  +widerthan($bp-tablet-start)
+    width calc(50% - 20px)
+  
+  a
+    border none
+  
+  &:hover
+    img
+      transform scale3d(1.03, 1.03, 1)
   
   img
     display block
+    transition transform 0.2s ease-in-out
+    transform scale3d(1, 1, 1)
   
   &:nth-child(1)
     animation-delay 0.5s
@@ -35,26 +48,58 @@
   
   &__caption
     position absolute
-    width calc(100% - 30px)
+    width 100%
     top 0
-    left 15px
+    left 0
     right 0
     bottom 0
+    height 100%
     background rgba(75, 67, 77, 0.9)
     opacity 0
     transition all 0.2s ease-in-out
     text-align center
     color white
     
+    div
+      display table
+      position relative
+      height 100%
+      width 100%
+      
+      &:hover
+        h3
+          top 0
+          opacity 1
+          
+        h3:after
+          width 40%
+    
     h3
-      position absolute
+      font-weight 400
+      position relative
+      display table-cell
+      vertical-align middle
       padding 0 0 4px
       margin 0
-      top 50%
-      left 50%
-      font-size 1.2em
-      transform translate(-50%, -50%)
-      border-bottom 1px solid darken(#B5E51D, 5%)
+      font-size 1.3em
+      top 10px
+      opacity 0
+      transition all 0.2 ease-in-out
+      
+      
+      &:after
+        position absolute
+        content ''
+        left 0
+        right 0
+        bottom calc(50% - 20px)
+        text-align center
+        margin auto
+        width 0%
+        height 2px
+        background darken(#B5E51D, 5%)
+        transition all 0.3s ease-in-out
+        max-width 150px
   
   &:hover &__caption
     opacity 1
