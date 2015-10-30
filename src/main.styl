@@ -14,15 +14,19 @@
 @import '_styl/footer'
 
 .avatar
-  border-radius 50%
-  width 80%
-  margin 1em auto
-  max-width 300px
+  max-width 200px
+  // border-radius 50%
+  margin-bottom 1.4em
+
+.about-info
+  font-size 1.2em
 
 .about-left
   @extend .col
-  @extend .col-laptop-and-up-9
-  font-size 24px
+  @extend .col-laptop-and-up-6
+  
+  +widerthan($bp-tablet-start)
+    padding-left 25%
   
   p
     max-width 700px
@@ -32,7 +36,13 @@
 
 .about-right
   @extend .col
-  @extend .col-laptop-and-up-3
+  @extend .col-laptop-and-up-6
+  
+  p
+    max-width 700px
+    
+    &:first-of-type
+      margin-top 0
 
 .social
   list-reset()

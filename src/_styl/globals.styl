@@ -1,5 +1,5 @@
 $base-color = #C6538C
-$base-font-family = "Akkurat", "DIN", "avenir", "verdana", sans-serif
+$base-font-family = 'calibre', "Akkurat", "DIN", "avenir", "verdana", sans-serif
 $animation-duration = 0.2s
 
 // Reset the box-sizing
@@ -9,7 +9,6 @@ $animation-duration = 0.2s
   &:before,
   &:after
     box-sizing border-box
-  transition all 0.2s ease-out
 
 img
   vertical-align: middle
@@ -26,35 +25,43 @@ a
   &:hover
     color darken(#B5E51D, 35%)
     border-bottom 1px solid darken(#B5E51D, 25%)
-  
+
+html
+  font-size: 120%  
 
 body
   font-family: $base-font-family
-  font-size: 18px
   // background: darken(#F2F4F6, 5%)
-  background #4B434D
-  // background: linear-gradient(to right, rgba(49,156,119,1) 0%, rgba(4,106,55,1) 100%)
-  color: darken(#878F9F, 25%)
+  // background #4B434D
+  // background: linear-gradient(50deg, rgba(55, 46, 57, 1) 0%, rgba(72, 78, 85, 1) 100%)
+  background linear-gradient(-50deg, rgba(206, 205, 199, 1) 0%, rgba(176, 175, 165, 1) 100%)
+  // background #9C9B8E
+  // background lighten(#9C9B8E, 20%)
+  color: darken(#878F9F, 30%)
   height: 100%
   margin: 0
-  line-height: 1.4
-  padding: 1em
+  line-height: 1.3
+  padding: 0.6em
   -webkit-font-smoothing antialiased
   text-rendering optimizeLegibility
+  
+  +widerthan($bp-tablet-start)
+    padding 1em
   
   &.noscroll
     overflow hidden
 
 .wrap
   background-color #F8F7F7
-  padding 1em
+  padding 1.5em
   min-height calc(100vh - 2em)
   
   +widerthan($bp-desk-start)
     padding 3em
 
 .contain
-  max-width 1170px
+  // max-width 1170px
+  max-width 1140px
   margin-left auto
   margin-right auto
 
@@ -64,40 +71,47 @@ h1
   display: block
   opacity 0
   transform translateY(-10px)
-  animation fadein 0.6s 0.5s 1 forwards ease-in-out
+  animation fadein 0.6s 0.5s 1 forwards ease
   font-weight 800
-  line-height 1.2
-  font-size 2em
-  text-align center
+  line-height 1.1
+  font-size 2.2em
   color #4B434D
   margin-bottom 40px
   
   +widerthan($bp-tablet-start)
-    font-size 3em
+    font-size 3.5em
 
   +widerthan($bp-desk-start)
     font-size 4.5em
   
   strong
-    font-weight normal
-    color #4B434D
+    font-weight 800
+    color lighten(#4B434D, 12%)
 
     
 .intro
   opacity 0
   transform translateY(-10px)
-  animation fadein 0.6s 0.5s 1 forwards ease-in-out
-  font-size 20px
+  animation fadein 0.6s 0.5s 1 forwards ease
+  font-size 1em
   text-align center
   
   +widerthan($bp-tablet-start)
     margin-bottom 2em
+    font-size 1.15em
   
   +widerthan($bp-desk-start)
     margin-bottom 6em
 
+.intro,
+.hero
+  text-align left
+  
+  +widerthan($bp-tablet-start)
+    // text-align center
+
 h3
-  font-weight: 300
+  font-weight: 400
   font-size: 1em
   line-height: 1
   display: block
@@ -105,7 +119,7 @@ h3
 h4
   font-family 'quarto'
   font-weight 700
-  font-size 1.6em
+  font-size 1.8em
   margin-top 0
 
 button
