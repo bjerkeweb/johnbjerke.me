@@ -1,0 +1,8 @@
+# Never use www in the domain
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.(([a-z0-9_]+.)?johnbjerke.me)$ [NC]
+RewriteRule .? http://%1%{REQUEST_URI} [R=301,L]
+
+# Remove .html from url requests
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
