@@ -103,3 +103,31 @@
   
   &:hover &__caption
     opacity 1
+
+.case-intro
+  contain()
+  margin-bottom 4em
+  @extend .row
+
+.case-title
+  @extend .col
+  @extend .col-laptop-and-up-6
+  
+  h1
+    font-size 2.2em
+  
+  h4
+    font-family $base-font-family
+    font-size 1em
+    opacity 0.6
+
+.case-desc
+  @extend .col
+  @extend .col-laptop-and-up-6
+
+body.work
+  img
+    margin-top 1em
+    
+    &:first-of-type
+      margin-top 0
