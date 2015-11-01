@@ -10,6 +10,7 @@
   visibility hidden
   opacity 0
   transition transform 0.2s ease, opacity 0.2s ease, visibility 0s 0.2s ease
+  z-index 2000
   
   &.is-open
     visibility visible
@@ -27,8 +28,12 @@
 
 .overlay-wrap
   height 100%
-  overflow-y scroll
-  -webkit-overflow-scrolling touch
+  width 100%
+
+.overlay.is-open
+  .overlay-wrap
+    overflow-y scroll
+    -webkit-overflow-scrolling touch
 
 .trigger-overlay
   position absolute
@@ -36,6 +41,7 @@
   right 0
   font-size 1.1rem
   font-weight 400
+  cursor pointer
 
 .overlay-close
   position absolute
@@ -44,6 +50,7 @@
   z-index 200
   font-size 1.1rem
   font-weight 400
+  cursor pointer
   
   +widerthan($bp-desk-start)
     top 4rem
