@@ -1,5 +1,5 @@
 $base-color = #C6538C
-$base-font-family = 'calibre', "Akkurat", "DIN", "avenir", "verdana", sans-serif
+$base-font-family = 'C', 'Calibre', "Akkurat", "DIN", "avenir", "verdana", sans-serif
 $animation-duration = 0.2s
 
 // Reset the box-sizing
@@ -39,18 +39,20 @@ body
   // background lighten(#9C9B8E, 20%)
   color: darken(#878F9F, 30%)
   height: 100%
+  width 100%
   margin: 0
   line-height: 1.3
   padding: 0.6em
   -webkit-font-smoothing antialiased
   text-rendering optimizeLegibility
+  position relative
+  cursor default
   
   +widerthan($bp-tablet-start)
     padding 1em
   
   &.noscroll
     overflow hidden
-    position fixed
 
 .wrap
   background-color #F8F7F7
@@ -67,7 +69,7 @@ body
   margin-right auto
 
 h1
-  font-family 'quarto'
+  font-family 'Q'
   margin: 0
   display: block
   opacity 0
