@@ -2,10 +2,13 @@
 @import '_styl/vendor/normalize'
 
 // Import partials
+@import '_styl/fonts'
 @import '_styl/variables'
 @import '_styl/mixins'
+@import '_styl/utilities'
 @import '_styl/animations'
 @import '_styl/globals'
+@import '_styl/typography'
 @import '_styl/grid'
 @import '_styl/overlay'
 
@@ -13,20 +16,25 @@
 @import '_styl/header'
 @import '_styl/footer'
 
-.avatar
-  max-width 200px
-  // border-radius 50%
-  margin-bottom 1.4em
-
 .about-info
   font-size 1.2em
+  
+  h4
+    line-height 1
+    
+    +widerthan($bp-tablet-start)
+      padding-left 25%
+
+  +widerthan($bp-tablet-start)
+    padding-left 1em
+    padding-right 1em
 
 .about-left
   @extend .col
-  @extend .col-laptop-and-up-6
+  @extend .col-laptop-and-up-4
   
   +widerthan($bp-tablet-start)
-    padding-left 25%
+    padding-left 0
   
   p
     max-width 700px
@@ -36,10 +44,10 @@
 
 .about-right
   @extend .col
-  @extend .col-laptop-and-up-6
+  @extend .col-laptop-and-up-8
   
   p
-    max-width 700px
+    max-width 500px
     
     &:first-of-type
       margin-top 0
@@ -54,3 +62,6 @@
   
   li
     display inline-block
+
+.explode
+  max-width none !important
