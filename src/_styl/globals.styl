@@ -1,7 +1,3 @@
-$base-color = #C6538C
-$base-font-family = 'C', 'Calibre', "Akkurat", "DIN", "avenir", "verdana", sans-serif
-$animation-duration = 0.2s
-
 // Reset the box-sizing
 *
   background-repeat: no-repeat
@@ -31,9 +27,26 @@ a
   &:hover
     color darken(#B5E51D, 35%)
     border-bottom 1px solid darken(#B5E51D, 25%)
+  
+  &.action
+    border-bottom none
+    
+    &:after
+      content '\2192\2002'
+      padding-left 3px
+      position relative
+      top 2px
+      transition padding 90ms ease-in-out
+    
+    &:hover:after
+      padding-left 8px
+
 
 html
-  font-size: 120%  
+  font-size: 20px
+  
+  +widerthan($bp-desk-start)
+    font-size 22px 
 
 body
   font-family: $base-font-family
@@ -69,21 +82,24 @@ body
     padding 3em
 
 .contain
-  // max-width 1170px
+  max-width 1140px
+  margin-left auto
+  margin-right auto
+
+contain()
   max-width 1140px
   margin-left auto
   margin-right auto
 
 h1
-  font-family 'Q'
+  font-family $alt-font-family
   margin: 0
   display: block
   opacity 0
   transform translateY(-10px)
   animation fadein 0.6s 0.5s 1 forwards ease
-  font-weight 800
   line-height 1.1
-  font-size 2.2em
+  font-size 2em
   color #4B434D
   margin-bottom 40px
   
@@ -91,7 +107,7 @@ h1
     font-size 3.5em
 
   +widerthan($bp-desk-start)
-    font-size 4.5em
+    font-size 4.2em
   
   strong
     font-weight 800
@@ -107,7 +123,7 @@ h1
   
   +widerthan($bp-tablet-start)
     margin-bottom 2em
-    font-size 1.15em
+    font-size 1.1em
   
   +widerthan($bp-desk-start)
     margin-bottom 6em
@@ -126,8 +142,7 @@ h3
   display: block
 
 h4
-  font-family 'quarto'
-  font-weight 700
+  font-family $alt-font-family
   font-size 1.8em
   margin-top 0
 
@@ -136,3 +151,30 @@ button
   background none
   border none
   outline none
+
+.img-band
+  padding 1.5em 0
+  
+  +widerthan($bp-desk-start)
+    padding 4em 0
+  
+  img
+    display block
+    margin auto
+  
+  &--grey
+    background-color darken(#F8F7F7, 5%)
+  
+  &--dark
+    background-color #22272D
+    
+  &--blue
+    background url('/images/blue-bg.jpg')
+    background-size cover
+
+.container
+  margin auto
+  max-width 800px
+  
+  &--large
+    max-width 1250px
