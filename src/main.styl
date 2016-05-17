@@ -1,5 +1,6 @@
 // Import Vendor 
 @import '_styl/vendor/normalize'
+@import '_styl/vendor/bxslider'
 
 // Import partials
 @import '_styl/fonts'
@@ -11,6 +12,7 @@
 @import '_styl/typography'
 @import '_styl/grid'
 @import '_styl/overlay'
+@import '_styl/sliders'
 
 @import '_styl/cases'
 @import '_styl/header'
@@ -63,5 +65,64 @@
   li
     display inline-block
 
+.links-list
+  list-reset()
+  
+  li
+    margin-bottom 8px
+
 .explode
   max-width none !important
+
+#js-particles
+  position absolute
+  top 0
+  left 0
+  overflow hidden
+  opacity 0
+  transform translateY(-10px)
+  animation fadeInUp 3s 0.5s 1 forwards ease
+
+.intro
+  font-size 24px
+  font-weight 100
+  line-height 1.5
+  color #777
+  margin-bottom 3em
+  
+  +widerthan($bp-tablet-start)
+    font-size 30px
+  
+  strong
+    font-weight 500
+    color #444
+
+.more-info
+  margin-bottom 2em
+  
+  +widerthan($bp-tablet-start)
+    margin-bottom 6em
+  
+  +narrowerthan($bp-tablet-start)
+    .col:nth-child(3)
+      margin-top 2.5em
+
+.work-description
+  margin-top 2.5em
+  margin-bottom 4em
+  
+  +widerthan($bp-tablet-start)
+    margin-bottom 6em
+  
+  h2
+    margin-bottom 8px
+  
+  p
+    margin 0
+  
+  .col:last-child
+    text-align right
+    
+    +narrowerthan($bp-tablet-start)
+      margin-top 1em
+  

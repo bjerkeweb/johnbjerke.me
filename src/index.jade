@@ -1,37 +1,117 @@
+//- h1.hero
+//-   | John is a designer <br> <strong>based in NYC.</strong>
+  
 .contain
-  h1.hero
-    | John is a designer <br> <strong>based in NYC.</strong>
-
   p.intro
-    | Creating interfaces and wrangling code&mdash;most recently at 
-    a(href="http://canary.is") Canary
-    | . <br> Currently available for new opportunities.
+    | Hello. I'm John Bjerke&mdash;an obsessive <strong>designer</strong> &amp; <strong>developer</strong> in NYC focused on creating elegant code and purpose-driven products.
 
-  .cases
-    .work-item
-      a(href="/work/minbox")
-        img(src="images/grid-minbox.png", alt="")
-        .work-item__caption
-          div          
-            h3 Minbox
+  section.more-info
+    .row
+      .col.col-mobile-6.col-laptop-and-up-3
+        h3 Previously
+        ul.links-list
+          li
+            a(href="http://canary.is") Canary
+          li
+            a(href="http://compass.com") Compass
+          li
+            a(href="http://minbox.com") Minbox
+          li
+            a(href="http://uservoice.com") Uservoice
 
-    .work-item
-      a(href="/work/streamnation")
-        img(src="images/grid-streamnation.png", alt="")
-        .work-item__caption
-          div
-            h3 Streamnation
+      .col.col-mobile-6.col-laptop-and-up-3
+        h3 Elsewhere
+        ul.links-list
+          li
+            a(href="mailto:johnmbjerke@gmail.com") Email
+          li
+            a(href="http://twitter.com/misterbjerke") Twitter
+          li
+            a(href="http://github.com/bjerkeweb") Github
+          li
+            a(href="/resume.pdf") Resume
 
-    .work-item
-      a(href="/work/uservoice")
-        img(src="images/grid-uservoice.png", alt="")
-        .work-item__caption
-          div
-            h3 Uservoice
+      .col.col-laptop-and-up-6
+        h3 Currently
+        p
+          | Working on freelance projects and available for new full-time opportunities.
+        P
+          | Have a project? 
+          a(href="mailto:johnmbjerke@gmail.com") Get in Touch
 
-    .work-item
-      a(href="/work/john-and-alex")
-        img(src="images/grid-john-and-alex.png", alt="")
-        .work-item__caption
-          div
-            h3 John and Alex
+.body-content
+  .contain
+    h2.selected-projects Selected projects&mdash;2012-2016
+
+  section.img-band.img-band--grey
+    .contain
+      ul.slider
+        li
+          img(src="images/canary/canary-2.jpg" alt="")
+        li
+          img(src="images/canary/canary-plan-2.png" alt="")
+        li
+          img(src="images/canary/canary-mobile-app.jpg" alt="")
+        li
+          img(src="images/canary/canary-doug.jpg" alt="")
+        li
+          img(src="images/canary/canary-4.png" alt="")
+        li
+          img(src="images/canary/canary-5.jpg" alt="")
+        //- li
+        //-   img(src="images/canary/canary-1.jpg" alt="")
+
+  .contain
+    .work-description.row
+      .col.col-laptop-and-up-4
+        h2 Canary
+        h5 Product Design, <br> Front-end Development
+      .col.col-laptop-and-up-4
+        p
+          | Canary is the all-in-one home security system that you control with your phone.
+      .col.col-laptop-and-up-4
+        p
+          a(href="http://canary.is") Visit Site
+
+  section.img-band.img-band--grey
+    .contain
+      ul.slider
+        li
+          img(src="images/minbox/collections-overview.png" alt="")
+        li
+          img(src="images/minbox/web-galleries.png" alt="")
+
+  .contain
+    .work-description.row
+      .col.col-laptop-and-up-4
+        h2 Minbox
+        h5 Product Design, <br> Front-end Development
+      .col.col-laptop-and-up-4
+        p
+          | Minbox provides fast, free, dead-simple file transfer for creatives.
+      .col.col-laptop-and-up-4
+        p
+          a(href="http://minbox.com") Visit Site
+
+  section.img-band.img-band--grey
+    .contain
+      ul.slider
+        li
+          img(src="images/uservoice/uservoice-3a.png" alt="")
+        li
+          img(src="images/uservoice/uservoice-1a.png" alt="")
+        li
+          img(src="images/uservoice/uservoice-2.jpg" alt="")
+
+  .contain
+    .work-description.row
+      .col.col-laptop-and-up-4
+        h2 Uservoice
+        h5 Product Design, <br>Front-end Development
+      .col.col-laptop-and-up-4
+        p
+          | User feedback, helpdesk, and knowledgebase tools.
+      .col.col-laptop-and-up-4
+        p
+          a(href="http://uservoice.com") Visit Site
+
