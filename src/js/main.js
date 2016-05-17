@@ -25,4 +25,17 @@ $(function() {
     }
   });
 
+  // init sliders
+  $('.slider').bxSlider({
+    auto: true,
+    mode: 'fade',
+    speed: 600,
+    controls: false
+  });
+
 });
+
+// init css transitions
+window.onload = function() {
+  $("body").removeClass('preload');
+}

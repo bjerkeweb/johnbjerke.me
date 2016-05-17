@@ -5,18 +5,28 @@ html
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     title #{title}
     meta(name="description", content="#{description}")
-    meta(name="viewport", content="width=device-width")
+    meta(name="viewport", content="width=device-width; initial-scale=1.0;")
+
     link(rel="stylesheet", href="/main.css")
     link(rel="shortcut icon" href="/favicon.ico")
-  body(class=(current.path[0] === 'work') ? current.path : '')
-    .wrap
-      != partial("/_header")
+  body.preload(class=(current.path[0] === 'work') ? current.path : '')
+    != partial("/_header")
 
-      .main(role="main")
-        != yield
-      
-      != partial("/_footer")
-    != partial("/_overlay")
+    .main(role="main")
+      != yield
+    
+    != partial("/_footer")
 
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
     script(src="/js/main.js")
+    script(src="/js/particles.js")
+    script(src="/js/vendor/bxslider.min.js")
+    
+    //- GoSquared
+    script.
+      !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+      arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+      d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+      insertBefore(d,q)}(window,document,'script','_gs');
+
+      _gs('GSN-084272-B');

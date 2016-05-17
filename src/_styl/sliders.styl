@@ -1,0 +1,18 @@
+.slider
+  display block
+  opacity 0
+  animation fadein 0.6s 0.5s 1 forwards ease
+  
+  li
+    top 0
+    left 0
+  
+.bx-pager-link
+  &:before
+    display none !important
+  &:after
+    display none !important
+
+.bx-pager
+  +narrowerthan(1080px)
+    padding-left 18px
