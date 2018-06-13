@@ -5,6 +5,6 @@
 node_modules
 
 # Ignore Harp generated static files
-
+dist/
 
 dploy.yaml
