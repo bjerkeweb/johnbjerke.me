@@ -1,7 +1,7 @@
 // header animation
 (function(){
-  
-  var H, Particle, W, animateParticles, canvas, clearCanvas, colorArray, createParticles, ctx, drawParticles, initParticleSystem, particleCount, particles, updateParticles, resizeCanvas;
+
+  var H, Particle, W, animateParticles, canvas, clearCanvas, colorArray, createParticles, ctx, drawParticles, initParticleSystem, particleCount, particles, updateParticles, resizeCanvas, ratio;
 
   particleCount = 45;
   particles = [];
@@ -17,12 +17,22 @@
     "#E43E20"
     // "#FAB93E"
   ];
+  ratio = window.devicePixelRatio || 1;
   canvas = document.getElementById("js-particles");
   canvas.setAttribute('width', window.innerWidth);
   canvas.setAttribute('height', 200);
   W = canvas.width;
   H = canvas.height;
   ctx = canvas.getContext("2d");
+
+  // retina canvas
+  if (ratio !== 1) {
+    canvas.style.width = canvas.width + 'px';
+    canvas.style.height = canvas.height + 'px';
+    canvas.width *= ratio;
+    canvas.height *= ratio;
+    ctx.scale(ratio, ratio);
+  }
 
   Particle = function() {
     this.color = colorArray[Math.floor(Math.random() * colorArray.length )];
@@ -35,36 +45,41 @@
     this.vx = 1 * Math.random() + .008;
     this.vy = 1 * Math.random() + .008;
     this.radius = 2.5;
-    this.move = function() {
-      this.x += this.vx * this.direction.x;
-      this.y += this.vy * this.direction.y;
-    };
-    this.changeDirection = function(axis) {
-      this.direction[axis] *= -1;
-    };
-    this.draw = function() {
-      ctx.beginPath();
-      ctx.fillStyle = this.color;
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-      ctx.fill();
-    };
-    this.boundaryCheck = function() {
-      if (this.x >= W - this.radius) {
-        this.x = W - this.radius;
-        this.changeDirection("x");
-      } else if (this.x <= 0 + this.radius) {
-        this.x = 0 + this.radius;
-        this.changeDirection("x");
-      }
-      if (this.y >= H - this.radius) {
-        this.y = H - this.radius;
-        this.changeDirection("y");
-      } else if (this.y <= 0 + this.radius) {
-        this.y = 0 + this.radius;
-        this.changeDirection("y");
-      }
-    };
   };
+
+  Particle.prototype.move = function() {
+    this.x += this.vx * this.direction.x;
+    this.y += this.vy * this.direction.y;
+  }
+
+  Particle.prototype.changeDirection = function( axis ) {
+    this.direction[axis] *= -1;
+  }
+
+  Particle.prototype.draw = function() {
+    ctx.beginPath();
+    ctx.fillStyle = this.color;
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+    ctx.fill();
+  }
+
+  Particle.prototype.boundaryCheck = function() {
+    if (this.x >= W - this.radius) {
+      this.x = W - this.radius;
+      this.changeDirection("x");
+    } else if (this.x <= 0 + this.radius) {
+      this.x = 0 + this.radius;
+      this.changeDirection("x");
+    }
+    if (this.y >= H - this.radius) {
+      this.y = H - this.radius;
+      this.changeDirection("y");
+    } else if (this.y <= 0 + this.radius) {
+      this.y = 0 + this.radius;
+      this.changeDirection("y");
+    }
+  }
+
   resizeCanvas = function() {
     canvas.setAttribute('width', window.innerWidth);
   }
@@ -113,6 +128,6 @@
   initParticleSystem();
   requestAnimationFrame(animateParticles);
 
-  $(window).resize(resizeCanvas);
-  
+  // $(window).resize(resizeCanvas);
+
 })();
